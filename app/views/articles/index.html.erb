@@ -1,9 +1,9 @@
 <% unless @genre.nil? %>
     <% provide(:title, @genre.name.upcase) %>
-    <h1><%= @genre.name.upcase %></h1>
+    <h2><%= @genre.name.upcase %></h2>
 <%else%>
     <% provide(:title, '所有文章') %>
-    <h1>所有文章</h1>
+    <h2>所有文章</h2>
 <%end%>
 
 <%= will_paginate %>
