@@ -5,7 +5,7 @@
     <% provide(:title, '所有文章') %>
     <h2>所有文章</h2>
 <%end%>
-
+<%= "暂无文章" unless @articles.any?%>
 <%= will_paginate %>
 
 <ul class="articles">
