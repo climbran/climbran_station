@@ -1,0 +1,16 @@
+<% provide(:title, @article.title) %>
+<article>
+  <h3><%= @article.title %></h3>
+  <h2><%= "#{@article.created_at}  #{@article.views_count} #{article_genre(@article)}" %></h2>
+  <h3><%= @article.content %></h3>
+</article>
+<div class="col-md-8">
+  <% if @article.reviews.any? %>
+    <h3>回复: (<%= @article.reviews.count %>)</h3>
+    <ol class="reviews"> <%= render @reviews %></ol>
+    <%= will_paginate @reviews %>
+  <% else %>
+    <h3>暂无回复</h3>
+  <% end %>
+  <%= render '/reviews/new' %>
+</div>
