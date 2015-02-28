@@ -6,7 +6,7 @@
 </div>
 <div class="span9 main">
   <% if @article.reviews.any? %>
-    <h2>回复: (<%= @article.reviews.count %>)</h2>
+    <h2>回复: (<%= @article.reviews.count %>)</h2></div>
     <ol class="reviews"> <%= render @reviews %></ol>
     <%= will_paginate @reviews %>
   <% else %>
